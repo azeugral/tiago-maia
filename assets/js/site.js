@@ -10,17 +10,18 @@
   mb.addEventListener('click', () => abreMenu(menu.hidden));
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => abreMenu(false)));
 
-  // retábulo: um painel troca de peça a cada 1,7 s (cada painel volta em ~5 s)
-  const paineis = [...document.querySelectorAll('.painel')].map((p) => ({ imgs: [...p.querySelectorAll('img')], i: 0 }));
-  let pv = 0;
+  // altar: a peça da moldura troca a cada 4,8 s, com um brilho de folha de ouro a atravessar
+  const tela = $('#tela'), quadros = [...tela.querySelectorAll('img')], leg = $('#hero-peca');
+  let qi = 0;
   const troca = () => {
     if (document.hidden) return;
-    const p = paineis[pv++ % paineis.length];
-    const velha = p.imgs[p.i]; p.i = (p.i + 1) % p.imgs.length; const nova = p.imgs[p.i];
-    nova.loading = 'eager'; nova.classList.add('entra');
-    setTimeout(() => { velha.classList.remove('on'); nova.classList.replace('entra', 'on'); }, 1000);
+    const velha = quadros[qi]; qi = (qi + 1) % quadros.length; const nova = quadros[qi];
+    nova.classList.add('entra'); tela.classList.remove('brilha'); void tela.offsetWidth; tela.classList.add('brilha');
+    leg.classList.add('muda');
+    setTimeout(() => { leg.textContent = nova.dataset.leg; leg.classList.remove('muda'); }, 450);
+    setTimeout(() => { velha.classList.remove('on'); nova.classList.replace('entra', 'on'); }, 1300);
   };
-  if (!reduz) setTimeout(() => setInterval(troca, 1700), 1800);
+  if (!reduz) setInterval(troca, 4800);
 
   // entradas
   const io = new IntersectionObserver((es) => es.forEach((e) => {
