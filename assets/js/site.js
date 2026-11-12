@@ -10,23 +10,19 @@
   mb.addEventListener('click', () => abreMenu(menu.hidden));
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => abreMenu(false)));
 
-  // hero: a peça do quadro troca a cada 4,8 s com uma cortina de baixo para cima
+  // hero: a peça do quadro troca a cada 4,3 s com uma cortina de baixo para cima
   const tela = $('#tela'), quadros = [...tela.querySelectorAll('img')], leg = $('#hero-peca');
   let qi = 0;
+  quadros.forEach((q) => { q.loading = 'eager'; q.decode && q.decode().catch(() => {}); });
   const troca = () => {
     if (document.hidden) return;
     const velha = quadros[qi]; qi = (qi + 1) % quadros.length; const nova = quadros[qi];
     nova.classList.add('entra'); 
     leg.classList.add('muda');
-    const n = quadros.length, ladoE = $('#lado-e'), ladoD = $('#lado-d');
-    [[ladoE, quadros[(qi - 1 + n) % n]], [ladoD, quadros[(qi + 1) % n]]].forEach(([el, q]) => {
-      el.classList.add('sai');
-      setTimeout(() => { el.src = q.src; el.parentElement.nextElementSibling.textContent = q.dataset.leg.split(' · ')[0]; el.classList.remove('sai'); }, 500);
-    });
     setTimeout(() => { leg.textContent = nova.dataset.leg; leg.classList.remove('muda'); }, 450);
     setTimeout(() => { velha.classList.remove('on'); nova.classList.replace('entra', 'on'); }, 1150);
   };
-  if (!reduz) setInterval(troca, 4800);
+  if (!reduz) setInterval(troca, 4300);
 
   // entradas
   const io = new IntersectionObserver((es) => es.forEach((e) => {

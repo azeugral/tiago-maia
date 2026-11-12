@@ -16,7 +16,7 @@
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="preload" href="assets/fonts/young-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fontes.css">
-<link rel="stylesheet" href="assets/css/site.css?v=5">
+<link rel="stylesheet" href="assets/css/site.css?v=6">
 </head>
 <body>
 <a class="saltar" href="#trabalhos">Saltar para os trabalhos</a>
@@ -45,11 +45,14 @@
 
 <main>
   <!-- hero: o nome grande e uma peça de cada vez, emoldurada como um quadro do altar -->
-  <section class="hero" id="inicio">
-    <p class="hero-onde">Santa Frida Art Studio · Batalha, Leiria</p>
+  <section class="hero" id="inicio" data-orn="folhas">
+    <img class="orn orn-e" src="assets/img/orn-folhas.webp" alt="" aria-hidden="true">
+    <img class="orn orn-d" src="assets/img/orn-folhas.webp" alt="" aria-hidden="true">
     <div class="palco">
-      <h1 class="nome" aria-label="Tiago Maia"><span>Tiago</span><span>Maia</span></h1>
-      <figure class="lado lado-e" aria-hidden="true"><div class="lado-tela"><img id="lado-e" src="assets/img/p/linha-008.webp" alt="" width="900" height="1125"></div><figcaption>Linha fina</figcaption></figure>
+      <div class="lado lado-e">
+        <p><b>Três estilos</b><span>Cor · Preto e cinza</span><span>Linha fina</span></p>
+        <p><b>Desenho à medida</b><span>Cada peça é única</span><span>Marcação por mensagem</span></p>
+      </div>
       <figure class="quadro">
         <i class="canto c1"></i><i class="canto c2"></i><i class="canto c3"></i><i class="canto c4"></i>
         <div class="tela" id="tela">
@@ -62,8 +65,12 @@
         </div>
         <figcaption class="hero-peca" id="hero-peca">Cor · Deadpool e Wolverine</figcaption>
       </figure>
-      <figure class="lado lado-d" aria-hidden="true"><div class="lado-tela"><img id="lado-d" src="assets/img/p/pb-042.webp" alt="" width="900" height="1125"></div><figcaption>Preto e cinza</figcaption></figure>
+      <div class="lado lado-d">
+        <p><b>Batalha, Leiria</b><span>Santa Frida Art Studio</span><span>Junto ao Mosteiro</span></p>
+        <p><b>Na estrada</b><span>Guest spots em Pulheim</span><span>Porto e Tomar</span></p>
+      </div>
     </div>
+    <h1 class="nome" aria-label="Tiago Maia"><span>Tiago</span><span>Maia</span></h1>
     <div class="hero-pe">
       <p class="hero-lema">Cor, preto e cinza ou linha fina. O desenho é sempre feito para ti.</p>
       <div class="hero-bts">
@@ -209,6 +216,6 @@
   <button class="caixa-nav caixa-prox" id="caixa-prox" aria-label="Seguinte">›</button>
 </div>
 
-<script src="assets/js/site.js?v=5" defer></script>
+<script src="assets/js/site.js?v=6" defer></script>
 </body>
 </html>
