@@ -10,16 +10,16 @@
   mb.addEventListener('click', () => abreMenu(menu.hidden));
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => abreMenu(false)));
 
-  // altar: a peça da moldura troca a cada 4,8 s, com um brilho de folha de ouro a atravessar
+  // hero: a peça do quadro troca a cada 4,8 s com uma cortina de baixo para cima
   const tela = $('#tela'), quadros = [...tela.querySelectorAll('img')], leg = $('#hero-peca');
   let qi = 0;
   const troca = () => {
     if (document.hidden) return;
     const velha = quadros[qi]; qi = (qi + 1) % quadros.length; const nova = quadros[qi];
-    nova.classList.add('entra'); tela.classList.remove('brilha'); void tela.offsetWidth; tela.classList.add('brilha');
+    nova.classList.add('entra'); 
     leg.classList.add('muda');
     setTimeout(() => { leg.textContent = nova.dataset.leg; leg.classList.remove('muda'); }, 450);
-    setTimeout(() => { velha.classList.remove('on'); nova.classList.replace('entra', 'on'); }, 1300);
+    setTimeout(() => { velha.classList.remove('on'); nova.classList.replace('entra', 'on'); }, 1150);
   };
   if (!reduz) setInterval(troca, 4800);
 
