@@ -10,13 +10,17 @@
   mb.addEventListener('click', () => abreMenu(menu.hidden));
   menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => abreMenu(false)));
 
-  // vitral do hero: as peças trocam devagar
-  const vid = [...document.querySelectorAll('#vitral img')];
-  let vi = 0;
-  if (!reduz) setInterval(() => {
+  // retábulo: um painel troca de peça a cada 1,7 s (cada painel volta em ~5 s)
+  const paineis = [...document.querySelectorAll('.painel')].map((p) => ({ imgs: [...p.querySelectorAll('img')], i: 0 }));
+  let pv = 0;
+  const troca = () => {
     if (document.hidden) return;
-    vid[vi].classList.remove('on'); vi = (vi + 1) % vid.length; vid[vi].classList.add('on');
-  }, 4600);
+    const p = paineis[pv++ % paineis.length];
+    const velha = p.imgs[p.i]; p.i = (p.i + 1) % p.imgs.length; const nova = p.imgs[p.i];
+    nova.loading = 'eager'; nova.classList.add('entra');
+    setTimeout(() => { velha.classList.remove('on'); nova.classList.replace('entra', 'on'); }, 1000);
+  };
+  if (!reduz) setTimeout(() => setInterval(troca, 1700), 1800);
 
   // entradas
   const io = new IntersectionObserver((es) => es.forEach((e) => {

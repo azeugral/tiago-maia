@@ -6,15 +6,15 @@
 <title>Tiago Maia · Tatuador na Batalha, Leiria</title>
 <meta name="description" content="Tiago Maia, tatuador no Santa Frida Art Studio, na Batalha (Leiria). Cor, preto e cinza e linha fina, sempre com desenho feito à medida.">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#140c0b">
+<meta name="theme-color" content="#1b3796">
 <meta property="og:title" content="Tiago Maia · Tatuador na Batalha">
 <meta property="og:description" content="Cor, preto e cinza e linha fina. Santa Frida Art Studio, Batalha.">
 <meta property="og:image" content="https://azeugral.github.io/tiago-maia/assets/img/og.jpg">
 <meta property="og:url" content="https://azeugral.github.io/tiago-maia/">
 <link rel="icon" href="assets/img/favicon.png">
-<link rel="preload" href="assets/fonts/gloock-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/big-shoulders-display-900-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fontes.css">
-<link rel="stylesheet" href="assets/css/site.css?v=1">
+<link rel="stylesheet" href="assets/css/site.css?v=2">
 </head>
 <body>
 <a class="saltar" href="#trabalhos">Saltar para os trabalhos</a>
@@ -27,7 +27,7 @@
     <a href="#estrada">Na estrada</a>
     <a href="#sobre">Sobre</a>
   </nav>
-  <a class="bt bt-ouro bt-topo" href="#marcar">Marcar</a>
+  <a class="bt bt-sol bt-topo" href="#marcar">Marcar</a>
   <button class="menu-bt" id="menu-bt" aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr">Menu</span></button>
 </header>
 <nav class="menu" id="menu" hidden aria-label="Menu">
@@ -36,33 +36,47 @@
   <a href="#estudio">Santa Frida</a>
   <a href="#estrada">Na estrada</a>
   <a href="#sobre">Sobre</a>
-  <a class="bt bt-ouro" href="#marcar">Marcar tatuagem</a>
+  <a class="bt bt-sol" href="#marcar">Marcar tatuagem</a>
 </nav>
 
 <main>
-  <!-- hero: a ogiva do Mosteiro, à luz das velas do altar -->
+  <!-- hero: um retábulo de três painéis, um por estilo, que abre ao carregar -->
   <section class="hero" id="inicio">
-    <div class="vela" aria-hidden="true"></div>
-    <div class="hero-eixo">
-      <span class="nome nome-a">Tiago</span>
-      <div class="ogiva" aria-label="Tatuagens do Tiago Maia">
-        <div class="ogiva-ouro" aria-hidden="true"></div>
-        <div class="ogiva-vidro" id="vitral">
-          <img class="on" src="assets/img/p/pb-042.webp" alt="Retrato clássico em preto e cinza na perna" width="900" height="1125" fetchpriority="high">
-          <img src="assets/img/p/cor-036.webp" alt="Deadpool e Wolverine a cores" width="900" height="1125" loading="lazy">
-          <img src="assets/img/p/linha-077.webp" alt="Abelha com flores em linha fina no ombro" width="900" height="1125" loading="lazy">
-          <img src="assets/img/p/pb-034.webp" alt="Leão com relógio em preto e cinza" width="900" height="1125" loading="lazy">
+    <p class="hero-onde">Santa Frida Art Studio · Batalha, Leiria</p>
+    <h1 class="nome"><span>Tiago</span> <span>Maia</span></h1>
+    <div class="retabulo" aria-label="Tatuagens do Tiago Maia, uma por estilo">
+      <figure class="painel painel-e" data-est="Cor">
+        <div class="painel-moldura"><div class="painel-vidro">
+          <img class="on" src="assets/img/p/cor-036.webp" alt="Deadpool e Wolverine a cores" width="900" height="1125">
           <img src="assets/img/p/cor-048.webp" alt="Pinguim surfista a cores" width="900" height="1125" loading="lazy">
-          <img src="assets/img/p/pb-035.webp" alt="Caveira com cérebro em preto e cinza" width="900" height="1125" loading="lazy">
-        </div>
-      </div>
-      <span class="nome nome-b">Maia</span>
+          <img src="assets/img/p/cor-087.webp" alt="Raiva, de Divertida-Mente, a cores" width="900" height="1125" loading="lazy">
+          <img src="assets/img/p/cor-110.webp" alt="Panda a cores" width="900" height="1125" loading="lazy">
+        </div></div>
+        <figcaption>Cor</figcaption>
+      </figure>
+      <figure class="painel painel-c" data-est="Preto e cinza">
+        <div class="painel-moldura"><div class="painel-vidro">
+          <img class="on" src="assets/img/p/pb-042.webp" alt="Retrato clássico em preto e cinza" width="900" height="1125" fetchpriority="high">
+          <img src="assets/img/p/pb-034.webp" alt="Leão com relógio em preto e cinza" width="900" height="1125" loading="lazy">
+          <img src="assets/img/p/pb-124.webp" alt="Astronauta em preto e cinza" width="900" height="1125" loading="lazy">
+          <img src="assets/img/p/pb-035.webp" alt="Caveira em preto e cinza" width="900" height="1125" loading="lazy">
+        </div></div>
+        <figcaption>Preto e cinza</figcaption>
+      </figure>
+      <figure class="painel painel-d" data-est="Linha fina">
+        <div class="painel-moldura"><div class="painel-vidro">
+          <img class="on" src="assets/img/p/linha-077.webp" alt="Abelha com flores em linha fina" width="900" height="1125">
+          <img src="assets/img/p/linha-008.webp" alt="Crisântemo em linha fina" width="900" height="1125" loading="lazy">
+          <img src="assets/img/p/linha-147.webp" alt="Peónia em linha fina" width="900" height="1125" loading="lazy">
+          <img src="assets/img/p/linha-005.webp" alt="Pássaros e flores em linha fina" width="900" height="1125" loading="lazy">
+        </div></div>
+        <figcaption>Linha fina</figcaption>
+      </figure>
     </div>
     <div class="hero-pe">
-      <p class="hero-onde">Tatuador no Santa Frida Art Studio · Batalha, Leiria</p>
       <p class="hero-lema">Cor, preto e cinza ou linha fina. O desenho é sempre feito para ti.</p>
       <div class="hero-bts">
-        <a class="bt bt-ouro" href="#marcar">Marcar tatuagem</a>
+        <a class="bt bt-sol" href="#marcar">Marcar tatuagem</a>
         <a class="bt bt-linha" href="#trabalhos">Ver trabalhos</a>
       </div>
     </div>
@@ -153,7 +167,7 @@
         <li class="postal revela"><span class="selo">PT</span><b>Tomar</b><span>Guest spot · maio de 2025</span></li>
         <li class="postal revela"><span class="selo">PT</span><b>Lisboa</b><span>Onde começou, há cerca de sete anos</span></li>
         <li class="postal revela"><span class="selo">PT</span><b>Oporto Tattoo</b><span>Convenção de tatuagem do Porto</span></li>
-        <li class="postal revela"><span class="selo">🍀</span><b>Próxima paragem</b><span>A campervan está pronta. Segue no Instagram.</span></li>
+        <li class="postal revela"><span class="selo">IG</span><b>Próxima paragem</b><span>A campervan está pronta. Segue no Instagram.</span></li>
       </ol>
     </div>
   </section>
@@ -213,6 +227,6 @@
   <button class="caixa-nav caixa-prox" id="caixa-prox" aria-label="Seguinte">›</button>
 </div>
 
-<script src="assets/js/site.js?v=1" defer></script>
+<script src="assets/js/site.js?v=2" defer></script>
 </body>
 </html>
