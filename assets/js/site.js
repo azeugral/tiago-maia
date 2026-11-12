@@ -18,6 +18,11 @@
     const velha = quadros[qi]; qi = (qi + 1) % quadros.length; const nova = quadros[qi];
     nova.classList.add('entra'); 
     leg.classList.add('muda');
+    const n = quadros.length, ladoE = $('#lado-e'), ladoD = $('#lado-d');
+    [[ladoE, quadros[(qi - 1 + n) % n]], [ladoD, quadros[(qi + 1) % n]]].forEach(([el, q]) => {
+      el.classList.add('sai');
+      setTimeout(() => { el.src = q.src; el.parentElement.nextElementSibling.textContent = q.dataset.leg.split(' · ')[0]; el.classList.remove('sai'); }, 500);
+    });
     setTimeout(() => { leg.textContent = nova.dataset.leg; leg.classList.remove('muda'); }, 450);
     setTimeout(() => { velha.classList.remove('on'); nova.classList.replace('entra', 'on'); }, 1150);
   };
